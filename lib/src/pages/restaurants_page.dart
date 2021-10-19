@@ -6,7 +6,7 @@ class RestaurantsPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      child: Text('Restaurants Page'),
+      child: Text('Restaurants page'),
     );
   }
 }

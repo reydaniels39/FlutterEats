@@ -21,32 +21,37 @@ class LoginPage extends StatelessWidget {
         ),
         child: SafeArea(                                                    //SafeArea para evitar que la app abarque también la zona del appbar o los botones
           child: Container(                                                 //Contenedor para margenes de la pagina completa
-            margin: EdgeInsets.symmetric(horizontal: 80, vertical: 80),     //Margenes para la página completa de inicio de sesión
+            margin: EdgeInsets.symmetric(horizontal: 80, vertical: 60),     //Margenes para la página completa de inicio de sesión
             child: Center(                                                  //Centrado
               child: Column(                                                //Organizado por Columnas
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,           //Espacio entre widgets
                 children: [
-                  Container(                                                //Contenedor que tiene la imagen para darle formato
-                    width: 250,                                             //Medidas de la imagen
-                    height: 250,
-                    child: FadeInImage(                                     //Imagen con FadeInImage para poder usar placeholder
-                      placeholder: AssetImage('assets/cargando.gif'),       //Gif Cargando
-                      image: AssetImage('assets/noire.jpg')                 //Aquí va el logo de la app.
+                   Flexible(                                                 //Permite Ajustar
+                    child: Container(                                         //Contenedor que tiene la imagen para darle formato
+                      width: 250,                                             //Medidas de la imagen
+                      height: 250,
+                      child: FadeInImage(                                     //Imagen con FadeInImage para poder usar placeholder
+                        placeholder: AssetImage('assets/cargando.gif'),       //Gif Cargando
+                        image: AssetImage('assets/noire.jpg')                 //Aquí va el logo de la app.
+                      ),
                     ),
                   ),
                   InputNombre(),                                            //Creación del Input de Nombre
                   InputDireccion(),                                         //Creación del Input de Dirección
-                  FloatingActionButton(                                     //Botón Entrar
-                    child: Text(
-                      'Entrar',
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 20,
+                  Container(
+                    margin: EdgeInsets.symmetric(vertical: 20.0),           //Separar un poco el boton del Input de arriba
+                    child: FloatingActionButton.extended(                   //Botón extendido de Entrar
+                      label: Text(
+                        'Entrar',
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 20,
+                        ),
                       ),
+                      onPressed: (){
+                        _entrar(context);                                     //Funcionalidad del Botón Entrar
+                      }
                     ),
-                    onPressed: (){
-                      _entrar(context);                                     //Funcionalidad del Botón Entrar
-                    }
                   ),
                 ],
               ),
@@ -58,11 +63,12 @@ class LoginPage extends StatelessWidget {
   }
 
   _entrar(context){
-    /*if(InputNombre().nombre != '' && InputDireccion().direccion != ''){
+    /*if(InputNombre.nombre != '' && InputDireccion.direccion != ''){
       Navigator.pushNamed(context, 'restaurants');          //Navegación a la página principal -> Restaurantes
     } else {
       _mostrarAlerta(context);
-    }*/
+    }
+    */
   }
 
   _mostrarAlerta(BuildContext context){                                                     //Alerta si algún campo está vacío

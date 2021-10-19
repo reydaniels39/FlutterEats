@@ -9,7 +9,7 @@ class InputNombre extends StatefulWidget {
 }
 
 class _InputNombreState extends State<InputNombre> {
-  String nombre = '';                                                   //Variable que guarda el nombre del Input
+  static String nombre = '';                                            //Variable que guarda el nombre del Input
 
   @override
   Widget build(BuildContext context) {

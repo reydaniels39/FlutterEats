@@ -9,7 +9,7 @@ class InputDireccion extends StatefulWidget {
 }
 
 class _InputDireccionState extends State<InputDireccion> {
-  String direccion = '';                                                          //Variable que guarda el nombre del Input
+  static String direccion = '';                                                   //Variable que guarda el nombre del Input
 
   @override
   Widget build(BuildContext context) {
