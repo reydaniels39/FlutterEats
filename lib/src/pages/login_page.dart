@@ -13,6 +13,7 @@ class LoginPage extends StatelessWidget {
     final inputsLoginProvider = Provider.of<InputsLoginProvider>(context);  //Instancia del Provider de los Inputs de Login
 
     return Scaffold(                                                        //Retornar un Scaffold
+      resizeToAvoidBottomInset: false,                                      //Para que el teclado no mueva los elementos del body
       body: Container(                                                      //Container para la decoración del Background
         decoration: BoxDecoration(
           gradient: LinearGradient(
@@ -84,7 +85,9 @@ class LoginPage extends StatelessWidget {
           actions: <Widget>[                                                                //Botón de la alerta
             TextButton(
               onPressed: () => Navigator.of(context).pop(),                                 //Cerrar alerta
-              child: Text('Ok'),                                                            //Texto del botón de la alerta
+              child: Text('Ok',
+                style: TextStyle(color: Colors.black),
+              ),                                                            //Texto del botón de la alerta
             ),
           ],
         );

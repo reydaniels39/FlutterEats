@@ -17,13 +17,14 @@ class FlutterEats extends StatelessWidget {
         theme: ThemeData(                                           //Temas para la app
           primaryColor: Color.fromRGBO(0, 255, 255, 1),             //Color Primario para el Tema    
           colorScheme: ThemeData().colorScheme.copyWith(
-            primary: Color.fromRGBO(0, 255, 255, 1),                //Color Primario para el Tema
+            //primary: Color.fromRGBO(0, 255, 255, 1),                
+            primary: Colors.amber,                                   //Color Primario para los elementos seleccionados
           ),
-          floatingActionButtonTheme: FloatingActionButtonThemeData( //Temas para los FAB
+          floatingActionButtonTheme: FloatingActionButtonThemeData(   //Temas para los Floating Action Buttons
             backgroundColor: Colors.purpleAccent,
           ),
         ),
-        initialRoute: '/',                                       //Ruta Inicial
+        initialRoute: 'restaurant_info',                                       //Ruta Inicial
         routes: getRoutes(),                                    //Obtener Rutas para navegación de la app
         onGenerateRoute: (settings){                            //En caso de ruta no encontrada...
           return MaterialPageRoute(

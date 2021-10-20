@@ -7,16 +7,30 @@ class CardSwiper extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     
+    /*return Swiper(
+        itemBuilder: (BuildContext context, int index) {
+          return Image.asset(
+            images[index],
+            fit: BoxFit.fill,
+          );
+        },
+        indicatorLayout: PageIndicatorLayout.COLOR,
+        autoplay: true,
+        itemCount: images.length,
+        pagination: SwiperPagination(),
+        control: SwiperControl(),
+      ),
+      */
 
-    
+    final size = MediaQuery.of(context).size;
     return Container(
       height: 300,
       width: double.infinity,
       child: Swiper(
         itemCount: 5,
         layout: SwiperLayout.STACK,
-        itemWidth: 300,
-        itemHeight: double.infinity,
+        itemWidth: size.width*0.6,
+        itemHeight: size.height*0.4,
         itemBuilder: (BuildContext context, int index){
           
               /*var images_list = [
@@ -26,7 +40,6 @@ class CardSwiper extends StatelessWidget {
                 AssetImage('card-swiper-test/pizza4.jpeg'),
                 AssetImage('card-swiper-test/pizza5.jpeg'),
               ];*/
-          
           return ClipRRect(
             child: FadeInImage(
               placeholder: AssetImage('cargando.gif'), 
@@ -38,5 +51,6 @@ class CardSwiper extends StatelessWidget {
         },
       ),
     );
+    
   }
 }
