@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_eats/src/providers/inputs_login_provider.dart';
+import 'package:provider/provider.dart';
 
 class InputNombre extends StatefulWidget {
   const InputNombre({Key? key}) : super(key: key);
@@ -8,11 +10,12 @@ class InputNombre extends StatefulWidget {
 
 }
 
-class _InputNombreState extends State<InputNombre> {
-  static String nombre = '';                                            //Variable que guarda el nombre del Input
-
+class _InputNombreState extends State<InputNombre> { 
   @override
   Widget build(BuildContext context) {
+    
+    final inputsLoginProvider = Provider.of<InputsLoginProvider>(context);  //Instancia del provider de los inputs de login
+
     var _textStyle = TextStyle(color: Colors.white, fontSize: 20);      //Variable de Estilo de Texto
 
     return TextField(                                                   //Input
@@ -25,11 +28,11 @@ class _InputNombreState extends State<InputNombre> {
       ),
       onChanged: (valor){                                               //Actualizar la variable con cada Cambio de valor
         setState(() {
-          nombre = valor;
+          inputsLoginProvider.nombre = valor;                           //Proveemos el valor al Provider
         });    
       },
       onSubmitted: (valor){                                             //Actualizar la variable al pulsar la palomita del teclado del input
-        nombre = valor;
+        inputsLoginProvider.nombre = valor;                             //Proveemos el valor al Provider
       },
     );
   }
