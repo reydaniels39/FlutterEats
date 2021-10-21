@@ -25,20 +25,20 @@ class _InputDireccionState extends State<InputDireccion> {
         enabledBorder: OutlineInputBorder(                                        //Decoración del borde
           borderRadius: BorderRadius.circular(30),
           borderSide: BorderSide(
-            color: Colors.purple,
+            color: Colors.amber,
             width: 2.0,
           ),
         ),
         focusedBorder: OutlineInputBorder(                                        //Decoración del borde al estar seleccionado
           borderRadius: BorderRadius.circular(30),
           borderSide: BorderSide(
-            color: Colors.amber,
+            color: Color.fromRGBO(0, 255, 255, 1),
             width: 2.0,
           ),
         ),
         hintText: 'Direccion',                                                  //Placeholder del input
         hintStyle: _textStyle,                                                  //Estilo del texto del Placeholder
-        prefixIcon: Icon(Icons.home_filled),                                    //Icono del input
+        prefixIcon: Icon(Icons.home_filled, color: Color.fromRGBO(0, 255, 255, 1),),              //Icono del input
       ),
       onChanged: (valor){                                                         //Actualizar la variable con cada Cambio de valor
         setState(() {
