@@ -47,7 +47,7 @@ class _Body extends StatelessWidget {
                 ),
               ),
               SizedBox(height: 20),                                   //Crea espacio entre elementos
-              //CardSwiper(),
+              CardSwiper(),
               Row(                                                    //Calificación del restaurante
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [

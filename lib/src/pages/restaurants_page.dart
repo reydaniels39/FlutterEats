@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:flutter_eats/src/providers/inputs_login_provider.dart';
@@ -17,14 +19,14 @@ class RestaurantsPage extends StatelessWidget {
     return Scaffold(
       body: SafeArea(
         child: Container(
-          margin: EdgeInsets.symmetric(horizontal: 50.0, vertical: 20.0),     //Margen para nuestra columna 
+          margin: EdgeInsets.fromLTRB(50.0, 20.0, 50.0, 0.0),     //Margen para nuestra columna 
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text('Bienvenido ${inputsLoginProvider.nombre}',                //Mensaje de bienvenida al usuario
                 style: TextStyle( 
                   color: Colors.black,
-                  fontSize: 25,
+                  fontSize: 30,
                   fontWeight: FontWeight.w500,
                 ),
               ), 
@@ -33,7 +35,7 @@ class RestaurantsPage extends StatelessWidget {
               Divider(color: Colors.black),
               Expanded(                                                           //Para que nuestro ListView abarque todo el espacio posible
                 child: ListView(                                                  //Lista de restaurantes
-                  children: listaRestaurantes()                                   //Método que obtiene una lista con los widgets
+                  children: listaRestaurantes(context)                            //Método que obtiene una lista con los widgets
                 ),
               ),
             ],
@@ -43,14 +45,32 @@ class RestaurantsPage extends StatelessWidget {
     );
   }
 
-  List <Widget> listaRestaurantes(){            
-    var widgets = restaurantes.map((index){                                           //Por cada elemento que tenemos en la lista 'restaurantes'
+  List <Widget> listaRestaurantes(context){                                       //Utilizamos el context para movernos de pagina
+    var widgets = restaurantes.map((index){                                       //Por cada elemento que tenemos en la lista 'restaurantes'
       return Column(
         children: <Widget>[
-          Card(                                                                       //Creamos una carta por restaurante
+          ListTile(                                                               //Cada List Tile es un restaurante
+            //tileColor: Colors.amber,                                                             
+            title: Text(index,
+              style: TextStyle(
+                fontSize: 25,
+                fontWeight: FontWeight.w400,
+              ),
+            ),
+            subtitle: Text('Categoría: Pizzas, Pasta',
+              style: TextStyle(
+                fontStyle: FontStyle.italic,
+              ),
+            ),
+            
+            onTap: (){                                                                  //Que nos lleve a la página de información
+              Navigator.pushNamed(context, 'restaurant_info');
+            },
+          ),
+          SizedBox(height: 10),                                                         //Para separar los list tiles
+          /*Card(                                                                       //Creamos una carta por restaurante
             shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
             margin: EdgeInsets.symmetric(vertical: 10, horizontal: 0),
-            
             child: Column(
               children: [
                 ListTile(
@@ -59,7 +79,7 @@ class RestaurantsPage extends StatelessWidget {
                 )
               ],
             ),
-          ),
+          ),*/
         ],
       );
     }).toList();
