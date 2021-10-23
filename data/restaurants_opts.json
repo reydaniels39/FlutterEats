@@ -1,0 +1,36 @@
+{
+    "restaurantes" : [
+        {
+            "id" : 1,
+            "titulo" : "Italiannis",
+            "subtitulo" : "Pizza, Pastas",
+            "logo": "app_logo.png",
+            "calificacion" : "4.3",
+            "informacion" : "Tempor consectetur adipisicing cupidatat excepteur mollit aliqua est irure nulla quis. Fugiat laboris nisi consectetur mollit tempor. In aliqua labore nostrud velit ipsum officia ea dolor id."
+        },
+        {
+            "id" : 2,
+            "titulo" : "Burguer King",
+            "subtitulo" : "Hamburguesas, Comida Rápida",
+            "logo": "app_logo.png",
+            "calificacion" : "5",
+            "informacion" : "Texto de prueba aaaaaaaaaaaaaaaa xfsdffdhfghdfghfdghfghfgh"
+        },
+        {
+            "id" : 3,
+            "titulo" : "Pizza Hut",
+            "subtitulo" : "Pizza",
+            "logo": "app_logo.png",
+            "calificacion" : "4",
+            "informacion" : "teaaaaaaaaaaaaaaaaaaaaaaaffffffffffffffffffffffffeeeeeeeeeeeeeeeeeeeennnnnnnnnnnnnnnnnnnnnn"
+        },
+        {
+            "id" : 4,
+            "titulo" : "Sushi Roll",
+            "subtitulo" : "Sushi, Oriental",
+            "logo": "app_logo.png",
+            "calificacion" : "4.5",
+            "informacion" : "shkdfbksdhfsldfhsdjufklhsufefsioifsdkflseifsdfoesjfkcslvnmc,vslkzzlñsdifgjhrugnrgrpoigeoriergrlkejrlktjeritertilret"
+        }
+    ]
+}

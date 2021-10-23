@@ -37,7 +37,7 @@ class LoginPage extends StatelessWidget {
                     height: 250,
                     child: FadeInImage(                                     //Imagen con FadeInImage para poder usar placeholder
                       placeholder: AssetImage('assets/cargando.gif'),       //Gif Cargando
-                      image: AssetImage('assets/noire.jpg')                 //Aquí va el logo de la app.
+                      image: AssetImage('assets/app_logo.png')              //Logo de la app.
                     ),
                   ),
                   InputNombre(),                                            //Creación del Input de Nombre
