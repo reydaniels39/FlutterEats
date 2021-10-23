@@ -40,12 +40,17 @@ class RestaurantCard extends StatelessWidget {
       final widgetTemporal = ListTile(
         leading: FadeInImage(                                     //Imagen con FadeInImage para poder usar placeholder
           placeholder: AssetImage('assets/cargando.gif'),         //Gif Cargando
-          image: AssetImage("assets/" + op['logo']),              //Logo del Restaurante
+          image: AssetImage("assets/restaurantImages/" + op['logo']),              //Logo del Restaurante
         ),
         title: Text(op['titulo']),
         subtitle: Text('Categoría: ' + op['subtitulo']),
         onTap: () {
-          restaurantInfoProvider.id = op['id'];
+          restaurantInfoProvider.titulo = op['titulo'];
+          restaurantInfoProvider.calificacion = op['calificacion'];
+          restaurantInfoProvider.informacion = op['informacion'];
+          restaurantInfoProvider.logo = op['logo'];
+          restaurantInfoProvider.categoria = op['subtitulo'];
+          restaurantInfoProvider.numeroImagenes = op['numeroImagenes'];
           Navigator.pushNamed(context, 'restaurant_info');
         },
       );
@@ -56,7 +61,12 @@ class RestaurantCard extends StatelessWidget {
                       children: <Widget>[
                         TextButton(
                           onPressed: () {
-                            restaurantInfoProvider.id = op['id'];
+                            restaurantInfoProvider.titulo = op['titulo'];
+                            restaurantInfoProvider.calificacion = op['calificacion'];
+                            restaurantInfoProvider.informacion = op['informacion'];
+                            restaurantInfoProvider.logo = op['logo'];
+                            restaurantInfoProvider.categoria = op['subtitulo'];
+                            restaurantInfoProvider.numeroImagenes = op['numeroImagenes'];
                             Navigator.pushNamed(context, 'restaurant_info');
                           },
                           child: Text('Ver Restaurante'),

@@ -69,23 +69,37 @@ class _Body extends StatelessWidget {
                 ),
               ),*/
               CardSwiper(),
-              Row(                                                    //Calificación del restaurante
-                mainAxisAlignment: MainAxisAlignment.start,
+              SizedBox(height: 10,),
+              Row(                                                    //Calificación y Categoría
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Icon(Icons.star_rounded, 
-                    size: 30, 
-                    color: Colors.amber
+                  Row(                                                //Calificación del restaurante
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: [
+                      Icon(Icons.star_rounded, 
+                        size: 30, 
+                        color: Colors.amber
+                      ),
+                      SizedBox(width: 5),
+                      Text('${restaurantInfoProvider.calificacion}', 
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 25,
+                        ),
+                      ),
+                    ],
                   ),
-                  SizedBox(width: 5),
-                  Text('${restaurantInfoProvider.calificacion}', 
+                  Text('${restaurantInfoProvider.categoria}',        //Categoría del restaurante
                     style: TextStyle(
-                      color: Colors.white,
-                      fontWeight: FontWeight.bold,
-                      fontSize: 25,
+                      color: Colors.amber,
+                      fontWeight: FontWeight.w500,
+                      fontSize: 18,
                     ),
                   ),
                 ],
               ),
+              SizedBox(height: 10,),
               Text(                                                     //Descripción del restaurante
                 '${restaurantInfoProvider.informacion}',
                 style: TextStyle(

@@ -1,36 +1,36 @@
 {
     "restaurantes" : [
         {
-            "id" : 1,
             "titulo" : "Italiannis",
             "subtitulo" : "Pizza, Pastas",
-            "logo": "app_logo.png",
-            "calificacion" : "4.3",
-            "informacion" : "Tempor consectetur adipisicing cupidatat excepteur mollit aliqua est irure nulla quis. Fugiat laboris nisi consectetur mollit tempor. In aliqua labore nostrud velit ipsum officia ea dolor id."
+            "logo": "pizza.jpg",
+            "calificacion" : 4.3,
+            "informacion" : "Tempor consectetur adipisicing cupidatat excepteur mollit aliqua est irure nulla quis. Fugiat laboris nisi consectetur mollit tempor. In aliqua labore nostrud velit ipsum officia ea dolor id.",
+            "numeroImagenes" : 4
         },
         {
-            "id" : 2,
             "titulo" : "Burguer King",
             "subtitulo" : "Hamburguesas, Comida Rápida",
-            "logo": "app_logo.png",
-            "calificacion" : "5",
-            "informacion" : "Texto de prueba aaaaaaaaaaaaaaaa xfsdffdhfghdfghfdghfghfgh"
+            "logo": "pizza.jpg",
+            "calificacion" : 5.0,
+            "informacion" : "Texto de prueba aaaaaaaaaaaaaaaa xfsdffdhfghdfghfdghfghfgh",
+            "numeroImagenes" : 4
         },
         {
-            "id" : 3,
             "titulo" : "Pizza Hut",
             "subtitulo" : "Pizza",
-            "logo": "app_logo.png",
-            "calificacion" : "4",
-            "informacion" : "teaaaaaaaaaaaaaaaaaaaaaaaffffffffffffffffffffffffeeeeeeeeeeeeeeeeeeeennnnnnnnnnnnnnnnnnnnnn"
+            "logo": "pizza.jpg",
+            "calificacion" : 4.0,
+            "informacion" : "teaaaaaaaaaaaaaaaaaaaaaaaffffffffffffffffffffffffeeeeeeeeeeeeeeeeeeeennnnnnnnnnnnnnnnnnnnnn",
+            "numeroImagenes" : 4
         },
         {
-            "id" : 4,
             "titulo" : "Sushi Roll",
             "subtitulo" : "Sushi, Oriental",
-            "logo": "app_logo.png",
-            "calificacion" : "4.5",
-            "informacion" : "shkdfbksdhfsldfhsdjufklhsufefsioifsdkflseifsdfoesjfkcslvnmc,vslkzzlñsdifgjhrugnrgrpoigeoriergrlkejrlktjeritertilret"
+            "logo": "pizza.jpg",
+            "calificacion" : 4.5,
+            "informacion" : "shkdfbksdhfsldfhsdjufklhsufefsioifsdkflseifsdfoesjfkcslvnmc,vslkzzlñsdifgjhrugnrgrpoigeoriergrlkejrlktjeritertilret",
+            "numeroImagenes" : 4
         }
     ]
 }
