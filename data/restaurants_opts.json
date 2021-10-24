@@ -2,34 +2,34 @@
     "restaurantes" : [
         {
             "titulo" : "Italiannis",
-            "subtitulo" : "Pizza, Pastas",
-            "logo": "pizza.jpg",
-            "calificacion" : 4.3,
-            "informacion" : "Tempor consectetur adipisicing cupidatat excepteur mollit aliqua est irure nulla quis. Fugiat laboris nisi consectetur mollit tempor. In aliqua labore nostrud velit ipsum officia ea dolor id.",
-            "numeroImagenes" : 4
+            "subtitulo" : "Pizza, Pasta",
+            "logo": "italiannis.jpg",
+            "calificacion" : 4.7,
+            "informacion" : "Restaurante italiano familiar para disfrutar comida típica italiana. Prueba nuestra pasta, pizza y vino para comer en familia o grupos.",
+            "numeroImagenes" : 5
         },
         {
             "titulo" : "Burguer King",
             "subtitulo" : "Hamburguesas, Comida Rápida",
-            "logo": "pizza.jpg",
-            "calificacion" : 5.0,
-            "informacion" : "Texto de prueba aaaaaaaaaaaaaaaa xfsdffdhfghdfghfdghfghfgh",
+            "logo": "burguerking.jpg",
+            "calificacion" : 4.4,
+            "informacion" : "Cadena estaodunidense de comida rápida. Nos especializamos en la confección de hamburguesas y sándwiches. Trae a tus pequeños por una KidBurguer, ¡y llevate un juguete de regalo!",
             "numeroImagenes" : 4
         },
         {
             "titulo" : "Pizza Hut",
             "subtitulo" : "Pizza",
-            "logo": "pizza.jpg",
-            "calificacion" : 4.0,
-            "informacion" : "teaaaaaaaaaaaaaaaaaaaaaaaffffffffffffffffffffffffeeeeeeeeeeeeeeeeeeeennnnnnnnnnnnnnnnnnnnnn",
+            "logo": "pizzahut.jpg",
+            "calificacion" : 3.9,
+            "informacion" : "¡Servimos pizzas de todo tipo! Somo creadores de la famosa pizza con orilla de mantequilla, de los boneless con salsa de chilaquiles ¡y mucho más!",
             "numeroImagenes" : 4
         },
         {
             "titulo" : "Sushi Roll",
             "subtitulo" : "Sushi, Oriental",
-            "logo": "pizza.jpg",
-            "calificacion" : 4.5,
-            "informacion" : "shkdfbksdhfsldfhsdjufklhsufefsioifsdkflseifsdfoesjfkcslvnmc,vslkzzlñsdifgjhrugnrgrpoigeoriergrlkejrlktjeritertilret",
+            "logo": "sushiroll.jpg",
+            "calificacion" : 4.9,
+            "informacion" : "Restaurante líder en comida japonesa por su excelencia en servicio, innovación y calidad. Estamos disponibles en más de 100 países. ¡Ven a probar de nuestra gran variedad y disfruta los miércoles 2x1!",
             "numeroImagenes" : 4
         }
     ]

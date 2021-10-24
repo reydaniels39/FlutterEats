@@ -68,7 +68,7 @@ class LoginPage extends StatelessWidget {
 
   _entrar(context, inputsLoginProvider){                                              //Función del botón, aquí recibimos la instancia del provider
     if(inputsLoginProvider.nombre != '' && inputsLoginProvider.direccion != ''){      //Si el nombre no está vacío ni la dirección entonces...
-      Navigator.pushNamed(context, 'restaurants');                                    //...Navegación a la página principal -> Restaurantes
+      Navigator.pushNamed(context, 'restaurants');                                      //...Navegación a la página principal -> HomePage
     } else {
       _mostrarAlerta(context);                                                        //Si no, mostrar una Alerta
     }

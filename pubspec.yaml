@@ -55,6 +55,7 @@ flutter:
   assets:
     - assets/
     - assets/restaurantImages/
+    - assets/ubicacionImages/
     - data/restaurants_opts.json
 
   # An image asset can refer to one or more resolution-specific "variants", see
