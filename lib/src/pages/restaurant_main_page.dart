@@ -9,8 +9,8 @@ import 'package:flutter_eats/src/widgets/custom_navigation_bar.dart';
 import 'package:flutter_eats/src/widgets/main_drawer.dart';
 import 'package:provider/provider.dart';
 
-class HomePage extends StatelessWidget {
-  const HomePage({Key? key}) : super(key: key);
+class RestaurantMainPage extends StatelessWidget {
+  const RestaurantMainPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

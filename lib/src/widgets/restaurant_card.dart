@@ -51,7 +51,7 @@ class RestaurantCard extends StatelessWidget {
           restaurantInfoProvider.logo = op['logo'];
           restaurantInfoProvider.categoria = op['subtitulo'];
           restaurantInfoProvider.numeroImagenes = op['numeroImagenes'];
-          Navigator.pushNamed(context, 'home_page');
+          Navigator.pushNamed(context, 'restaurantMain');
         },
       );
       restaurantes..add(widgetTemporal)
@@ -67,7 +67,7 @@ class RestaurantCard extends StatelessWidget {
                             restaurantInfoProvider.logo = op['logo'];
                             restaurantInfoProvider.categoria = op['subtitulo'];
                             restaurantInfoProvider.numeroImagenes = op['numeroImagenes'];
-                            Navigator.pushNamed(context, 'home_page');
+                            Navigator.pushNamed(context, 'restaurantMain');
                           },
                           child: Text('Ver Restaurante'),
                         ),

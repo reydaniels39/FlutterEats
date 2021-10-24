@@ -22,7 +22,7 @@ class CardSwiper extends StatelessWidget {
             borderRadius: BorderRadius.circular(25),
             child: FadeInImage(                                     //Imagen con FadeInImage para poder usar placeholder
               placeholder: AssetImage('assets/cargando.gif'),         //Gif Cargando
-              image: AssetImage('assets/restaurantImages/' + separarExtension(restaurantInfoProvider.logo)[0] + '$index' + '.' + separarExtension(restaurantInfoProvider.logo)[1]),              //Imágenes del Restaurante
+              image: AssetImage('assets/restaurantImages/' + separarExtension(restaurantInfoProvider.logo)[0] + '$index' + '.jpg'),              //Imágenes del Restaurante
               fit: BoxFit.fitHeight,
             ),
           );

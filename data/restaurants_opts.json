@@ -3,7 +3,7 @@
         {
             "titulo" : "Italiannis",
             "subtitulo" : "Pizza, Pasta",
-            "logo": "italiannis.jpg",
+            "logo": "italiannis.png",
             "calificacion" : 4.7,
             "informacion" : "Restaurante italiano familiar para disfrutar comida típica italiana. Prueba nuestra pasta, pizza y vino para comer en familia o grupos.",
             "numeroImagenes" : 5
@@ -11,7 +11,7 @@
         {
             "titulo" : "Burguer King",
             "subtitulo" : "Hamburguesas, Comida Rápida",
-            "logo": "burguerking.jpg",
+            "logo": "burguerking.png",
             "calificacion" : 4.4,
             "informacion" : "Cadena estaodunidense de comida rápida. Nos especializamos en la confección de hamburguesas y sándwiches. Trae a tus pequeños por una KidBurguer, ¡y llevate un juguete de regalo!",
             "numeroImagenes" : 4
@@ -19,7 +19,7 @@
         {
             "titulo" : "Pizza Hut",
             "subtitulo" : "Pizza",
-            "logo": "pizzahut.jpg",
+            "logo": "pizzahut.png",
             "calificacion" : 3.9,
             "informacion" : "¡Servimos pizzas de todo tipo! Somo creadores de la famosa pizza con orilla de mantequilla, de los boneless con salsa de chilaquiles ¡y mucho más!",
             "numeroImagenes" : 4
@@ -27,7 +27,7 @@
         {
             "titulo" : "Sushi Roll",
             "subtitulo" : "Sushi, Oriental",
-            "logo": "sushiroll.jpg",
+            "logo": "sushiroll.png",
             "calificacion" : 4.9,
             "informacion" : "Restaurante líder en comida japonesa por su excelencia en servicio, innovación y calidad. Estamos disponibles en más de 100 países. ¡Ven a probar de nuestra gran variedad y disfruta los miércoles 2x1!",
             "numeroImagenes" : 4
