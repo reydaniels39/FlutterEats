@@ -13,7 +13,7 @@ class LoginPage extends StatelessWidget {
     final inputsLoginProvider = Provider.of<InputsLoginProvider>(context);  //Instancia del Provider de los Inputs de Login
 
     return Scaffold(                                                        //Retornar un Scaffold
-      resizeToAvoidBottomInset: false,                                      //Para que el teclado no mueva los elementos del body
+      resizeToAvoidBottomInset: true,                                      //Para que el teclado no mueva los elementos del body
       body: Container(                                                      //Container para la decoración del Background
         decoration: BoxDecoration(
           gradient: LinearGradient(
@@ -30,20 +30,23 @@ class LoginPage extends StatelessWidget {
             margin: EdgeInsets.symmetric(horizontal: 80, vertical: 60),     //Margenes para la página completa de inicio de sesión
             child: Center(                                                  //Centrado
               child: Column(                                                //Organizado por Columnas
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,           //Espacio entre widgets
+                mainAxisAlignment: MainAxisAlignment.spaceAround,           //Espacio entre widgets
                 children: [
-                  Container(                                                //Contenedor que tiene la imagen para darle formato
-                    width: 250,                                             //Medidas de la imagen
-                    height: 250,
-                    child: FadeInImage(                                     //Imagen con FadeInImage para poder usar placeholder
-                      placeholder: AssetImage('assets/cargando.gif'),       //Gif Cargando
-                      image: AssetImage('assets/app_logo.png')              //Logo de la app.
+                  Flexible(
+                    flex: 3,
+                    child: Container(                                                //Contenedor que tiene la imagen para darle formato
+                      width: double.infinity,                                             //Medidas de la imagen
+                      height: 250,
+                      child: FadeInImage(                                     //Imagen con FadeInImage para poder usar placeholder
+                        placeholder: AssetImage('assets/cargando.gif'),       //Gif Cargando
+                        image: AssetImage('assets/app_logo.png')              //Logo de la app.
+                      ),
                     ),
                   ),
-                  InputNombre(),                                            //Creación del Input de Nombre
-                  InputDireccion(),                                         //Creación del Input de Dirección
+                  Flexible(flex: 2,child: InputNombre()),                                            //Creación del Input de Nombre
+                  Flexible(flex: 2,child: InputDireccion()),                                         //Creación del Input de Dirección
                   Container(
-                    margin: EdgeInsets.symmetric(vertical: 20.0),           //Separar un poco el botón del Input de arriba
+                    margin: EdgeInsets.symmetric(vertical: 10.0),           //Separar un poco el botón del Input de arriba
                     child: FloatingActionButton.extended(                   //Botón extendido de Entrar
                       label: Text(
                         'Entrar',

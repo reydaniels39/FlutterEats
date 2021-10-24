@@ -6,7 +6,12 @@
             "logo": "italiannis.png",
             "calificacion" : 4.7,
             "informacion" : "Restaurante italiano familiar para disfrutar comida típica italiana. Prueba nuestra pasta, pizza y vino para comer en familia o grupos.",
-            "numeroImagenes" : 5
+            "numeroImagenes" : 5,
+            "ubicaciones" : ["Calle Rogelio Solís #5 Los Cabos", "Av San José #52 El Pedregal"],
+            "alimentos" : ["Pizza Italiana","Pizza Mozarella","Espaguetti","Queso Formaggio","Albondigas"],
+            "precioAlimentos" : ["130","150","110","75","110"],
+            "bebidas" : ["Vino Blanco","Vino Tinto", "Agua mineral", "Vino Rosado"],
+            "precioBebidas" : ["60","70","45","75"]
         },
         {
             "titulo" : "Burguer King",
@@ -14,7 +19,12 @@
             "logo": "burguerking.png",
             "calificacion" : 4.4,
             "informacion" : "Cadena estaodunidense de comida rápida. Nos especializamos en la confección de hamburguesas y sándwiches. Trae a tus pequeños por una KidBurguer, ¡y llevate un juguete de regalo!",
-            "numeroImagenes" : 4
+            "numeroImagenes" : 4,
+            "ubicaciones" : ["Av Los Cabos #45 Osuluamas"],
+            "alimentos" : ["Big Mac","Supreme Burguer","Aros de Cebolla","KidBurguer","Nuggets de Pollo"],
+            "precioAlimentos" : ["80","110","55","70","45"],
+            "bebidas" : ["Sprite","Fanta", "Pepsi", "Agua Mineral"],
+            "precioBebidas" : ["35","35","35","25"]
         },
         {
             "titulo" : "Pizza Hut",
@@ -22,7 +32,12 @@
             "logo": "pizzahut.png",
             "calificacion" : 3.9,
             "informacion" : "¡Servimos pizzas de todo tipo! Somo creadores de la famosa pizza con orilla de mantequilla, de los boneless con salsa de chilaquiles ¡y mucho más!",
-            "numeroImagenes" : 4
+            "numeroImagenes" : 4,
+            "ubicaciones" : ["Av Bolaños Gómez Ext. 45 Los Olvera", "Calle Madrugal #29 Las Marmotas"],
+            "alimentos" : ["Pizza Orilla de Mantequilla","Pizza Peperoni","Boneless con Salsa de Chilaquil","Pizza Hawaiana","Pizza Orilla de Queso"],
+            "precioAlimentos" : ["160","90","75","110","135"],
+            "bebidas" : ["Coca Cola","Sprite", "Pepsi", "Fanta"],
+            "precioBebidas" : ["50","40","50","40"]
         },
         {
             "titulo" : "Sushi Roll",
@@ -30,7 +45,12 @@
             "logo": "sushiroll.png",
             "calificacion" : 4.9,
             "informacion" : "Restaurante líder en comida japonesa por su excelencia en servicio, innovación y calidad. Estamos disponibles en más de 100 países. ¡Ven a probar de nuestra gran variedad y disfruta los miércoles 2x1!",
-            "numeroImagenes" : 4
+            "numeroImagenes" : 4,
+            "ubicaciones" : ["Calle Lomas #2 San Marcos"],
+            "alimentos" : ["Dragon Roll","Spicy Roll","Tampico Roll","Samurai Roll","Yakimeshi"],
+            "precioAlimentos" : ["80","90","70","90","65"],
+            "bebidas" : ["Sprite","Fanta", "Pepsi", "Té de Manzanilla"],
+            "precioBebidas" : ["35","35","45","25"]
         }
     ]
 }

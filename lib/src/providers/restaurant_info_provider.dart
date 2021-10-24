@@ -8,6 +8,11 @@ class RestaurantInfoProvider with ChangeNotifier {         //Clase Provider, per
   String _logo = '';
   String _categoria = '';
   int _numeroImagenes = 0;
+  List _ubicaciones = [];
+  List _alimentos = [];
+  List _precioAlimentos = [];
+  List _bebidas = [];
+  List _precioBebidas = [];
 
   get titulo{                   //Getter de titulo
     return _titulo;
@@ -68,4 +73,55 @@ class RestaurantInfoProvider with ChangeNotifier {         //Clase Provider, per
 
     notifyListeners();
   }
+
+  get ubicaciones{
+    return _ubicaciones;
+  }
+
+  set ubicaciones(ubicaciones){
+    this._ubicaciones = ubicaciones;
+
+    notifyListeners();
+  }
+
+  get alimentos{
+    return _alimentos;
+  }
+
+  set alimentos(alimentos){
+    this._alimentos = alimentos;
+
+    notifyListeners();
+  }
+
+  get precioAlimentos{
+    return _precioAlimentos;
+  }
+
+  set precioAlimentos(precioAlimentos){
+    this._precioAlimentos = precioAlimentos;
+
+    notifyListeners();
+  }
+
+  get bebidas{
+    return _bebidas;
+  }
+  
+  set bebidas(bebidas){
+    this._bebidas = bebidas;
+
+    notifyListeners();
+  }
+
+  get precioBebidas{
+    return _precioBebidas;
+  }
+
+  set precioBebidas(precioBebidas){
+    this._precioBebidas = precioBebidas;
+
+    notifyListeners();
+  }
+
 }

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_eats/src/providers/pagina_provider.dart';
 import 'package:flutter_eats/src/providers/restaurant_info_provider.dart';
 import 'package:flutter_eats/src/providers/restaurants_provider.dart';
 import 'package:provider/provider.dart';
@@ -24,6 +25,8 @@ class RestaurantCard extends StatelessWidget {
   }
 
   List<Widget> _listaItems(List<dynamic>? data, BuildContext context, restaurantInfoProvider){
+    final paginaProvider = Provider.of<PaginaProvider>(context);
+
     final List<Widget> restaurantes = [
       Center(
         child: Text(                                                //Cabecera de la Lista Centrado
@@ -44,13 +47,19 @@ class RestaurantCard extends StatelessWidget {
         ),
         title: Text(op['titulo']),
         subtitle: Text('Categoría: ' + op['subtitulo']),
-        onTap: () {
+        onTap: () {                                                   //Asignamos todos los valores al provider
           restaurantInfoProvider.titulo = op['titulo'];
           restaurantInfoProvider.calificacion = op['calificacion'];
           restaurantInfoProvider.informacion = op['informacion'];
           restaurantInfoProvider.logo = op['logo'];
           restaurantInfoProvider.categoria = op['subtitulo'];
           restaurantInfoProvider.numeroImagenes = op['numeroImagenes'];
+          restaurantInfoProvider.ubicaciones = op['ubicaciones'];
+          restaurantInfoProvider.alimentos = op['alimentos'];
+          restaurantInfoProvider.precioAlimentos = op['precioAlimentos'];
+          restaurantInfoProvider.bebidas = op['bebidas'];
+          restaurantInfoProvider.precioBebidas = op['precioBebidas'];
+          paginaProvider.paginaSeleccionada = 0;
           Navigator.pushNamed(context, 'restaurantMain');
         },
       );
@@ -67,6 +76,12 @@ class RestaurantCard extends StatelessWidget {
                             restaurantInfoProvider.logo = op['logo'];
                             restaurantInfoProvider.categoria = op['subtitulo'];
                             restaurantInfoProvider.numeroImagenes = op['numeroImagenes'];
+                            restaurantInfoProvider.ubicaciones = op['ubicaciones'];
+                            restaurantInfoProvider.alimentos = op['alimentos'];
+                            restaurantInfoProvider.precioAlimentos = op['precioAlimentos'];
+                            restaurantInfoProvider.bebidas = op['bebidas'];
+                            restaurantInfoProvider.precioBebidas = op['precioBebidas'];
+                            paginaProvider.paginaSeleccionada = 0;
                             Navigator.pushNamed(context, 'restaurantMain');
                           },
                           child: Text('Ver Restaurante'),

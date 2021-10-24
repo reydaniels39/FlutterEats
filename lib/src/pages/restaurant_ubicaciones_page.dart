@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_eats/src/providers/restaurant_info_provider.dart';
+import 'package:provider/provider.dart';
 
 class RestaurantUbicacionesPage extends StatelessWidget {
   const RestaurantUbicacionesPage({Key? key}) : super(key: key);
@@ -15,6 +17,9 @@ class _Body extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
+    final restaurantInfoProvider = Provider.of<RestaurantInfoProvider>(context);     //Instanciamos el provider con la informacion del restaurante
+
     return SafeArea(
       child: Container(
         margin: EdgeInsets.symmetric(horizontal: 60.0),
@@ -29,31 +34,46 @@ class _Body extends StatelessWidget {
               ),
             ),
             SizedBox(height: 20.0),
-            tarjetaUbicacion(),                                               //Regresa una tarjeta con el formato de ubicacion,
-            tarjetaUbicacion(),                                             
+            Column(
+              children: mostrarUbicaciones(context, restaurantInfoProvider)       //Muestra una tarjeta por cada ubicacion del restaurante
+            ),
           ],
         ),
       ), 
     );
   }
 
-  Widget tarjetaUbicacion (){
-    return ClipRRect(
-      borderRadius: BorderRadius.all(Radius.circular(30.0)),
-      child: Card(
-        child: Column(
-          children: [
-            FadeInImage(
-              placeholder: AssetImage('assets/cargando.gif'), 
-              image: AssetImage('assets/ubicacionImages/italiannisubicacion0.jpg')
-            ),
-            Container(
-              padding: EdgeInsets.all(10.0),
-              child: Text('Calle Rogelio Solís #5 Los Cabos'),
-            ),
-          ],
+  List <Widget> mostrarUbicaciones(context, provider){
+    final List<Widget> tarjetas = [];
+
+    for (var i = 0; i < provider.ubicaciones.length; i++){
+      final widgetTemporal = ClipRRect(
+        borderRadius: BorderRadius.all(Radius.circular(30.0)),
+        child: Card(
+          child: Column(
+            children: [
+              FadeInImage(
+                placeholder: AssetImage('assets/cargando2.gif'), 
+                image: AssetImage('assets/ubicacionImages/' + separarExtension(provider.logo)[0] + 'ubicacion' + '$i' + '.jpg'),
+              ),
+              Container(
+                padding: EdgeInsets.all(10.0),
+                child: Text(provider.ubicaciones[i]),
+              ),
+            ],
+          ),
         ),
-      ),
-    );
+      );
+      tarjetas..add(widgetTemporal)
+              ..add(SizedBox(height:20.0));
+    }
+
+    return tarjetas;
+
+  }
+
+  separarExtension(String nombreCompleto){
+    List<String> nombreSeparado = nombreCompleto.split('.');
+    return nombreSeparado;
   }
 }
