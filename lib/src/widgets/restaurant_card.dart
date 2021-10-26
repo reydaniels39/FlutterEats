@@ -32,11 +32,13 @@ class RestaurantCard extends StatelessWidget {
         child: Text(                                                //Cabecera de la Lista Centrado
           'Restaurantes cerca de ti',
           style: TextStyle(
-            fontSize: 20,
+            color: Colors.white,
+            fontSize: 24,
+            fontWeight: FontWeight.w200,
           ),
         ),
       ),
-      Divider(color: Colors.black),
+      Divider(color: Colors.white),
     ];
 
     data?.forEach((op) {
@@ -45,8 +47,20 @@ class RestaurantCard extends StatelessWidget {
           placeholder: AssetImage('assets/cargando.gif'),         //Gif Cargando
           image: AssetImage("assets/restaurantImages/" + op['logo']),              //Logo del Restaurante
         ),
-        title: Text(op['titulo']),
-        subtitle: Text('Categoría: ' + op['subtitulo']),
+        title: Text(op['titulo'],
+          style: TextStyle(
+            color: Colors.white,
+            fontWeight: FontWeight.bold,
+            fontSize: 20  
+          ),
+        ),
+        subtitle: Text('Categoría: ' + op['subtitulo'],
+          style: TextStyle(
+            color: Colors.white,
+            fontWeight: FontWeight.w300,
+            fontSize: 13,  
+          ),
+        ),
         onTap: () {                                                   //Asignamos todos los valores al provider
           restaurantInfoProvider.titulo = op['titulo'];
           restaurantInfoProvider.calificacion = op['calificacion'];

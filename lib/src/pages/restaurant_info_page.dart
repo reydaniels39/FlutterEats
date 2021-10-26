@@ -46,7 +46,7 @@ class _Body extends StatelessWidget {
                     Text('${restaurantInfoProvider.calificacion}', 
                       style: TextStyle(
                         color: Colors.white,
-                        fontWeight: FontWeight.bold,
+                        fontWeight: FontWeight.w300,
                         fontSize: 25,
                       ),
                     ),
@@ -55,8 +55,9 @@ class _Body extends StatelessWidget {
                 Text('${restaurantInfoProvider.categoria}',        //Categoría del restaurante
                   style: TextStyle(
                     color: Colors.amber,
-                    fontWeight: FontWeight.w500,
+                    fontWeight: FontWeight.w300,
                     fontSize: 18,
+                    fontStyle: FontStyle.italic
                   ),
                 ),
               ],
@@ -67,6 +68,7 @@ class _Body extends StatelessWidget {
               style: TextStyle(
                 color: Colors.white,
                 fontSize: 18,
+                fontWeight: FontWeight.w300,
               ),
               textAlign: TextAlign.justify,
             ),

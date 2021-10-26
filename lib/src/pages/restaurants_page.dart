@@ -13,16 +13,19 @@ class RestaurantsPage extends StatelessWidget {
     final inputsLoginProvider = Provider.of<InputsLoginProvider>(context);  //Instancia del Provider de los Inputs de Login
 
     return Scaffold(
-      appBar: AppBar(                                                 //AppBar que muestra una Bienvenida
+      appBar: AppBar( 
+        backgroundColor: Color.fromRGBO(255, 209, 0, 1),                                                //AppBar que muestra una Bienvenida
         title: Text(
           'Bienvenido ${inputsLoginProvider.nombre}!',
           style: TextStyle(
             fontSize: 25,
-            color: Colors.orange[500],
+            color: Color.fromRGBO(19, 19, 19, 1),
+            fontWeight: FontWeight.w400
           ),
         ),
       ),
       body: Container(
+        color: Color.fromRGBO(19, 19, 19, 1),
         child: RestaurantCard(),                                          //Lista Dinámica de los restaurantes (Lee los datos desde restaurants_opts.json)
       ),
       drawer: MainDrawer(),                                               //Drawer

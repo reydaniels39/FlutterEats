@@ -30,10 +30,12 @@ class _Body extends StatelessWidget {
               textAlign: TextAlign.center,
               style: TextStyle(
                 color: Colors.white,
-                fontSize: 20,
+                fontSize: 16,
+                fontWeight: FontWeight.w300,
               ),
             ),
-            SizedBox(height: 20.0),
+            Divider(color: Colors.white),
+            SizedBox(height: 20),
             Column(
               children: mostrarUbicaciones(context, restaurantInfoProvider)       //Muestra una tarjeta por cada ubicacion del restaurante
             ),
