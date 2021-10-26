@@ -2,7 +2,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_eats/src/providers/carrito_provider.dart';
 import 'package:flutter_eats/src/providers/restaurant_info_provider.dart';
-import 'package:flutter_eats/src/widgets/producto.dart';
 import 'package:provider/provider.dart';
 
 class RestaurantMenuPage extends StatelessWidget {
@@ -92,7 +91,7 @@ Widget build(BuildContext context) {
   }
 
   
-  Widget crearProducto(carritoProvider, tipoProducto,nombre,precio){                 //Crea un ListTile con la información de un producto
+  Widget crearProducto(carritoProvider, tipoProducto, nombre, precio){                 //Crea un ListTile con la información de un producto
     
     String icon = '';
 
@@ -123,13 +122,40 @@ Widget build(BuildContext context) {
           ),
         ),
       ),
-      trailing: GestureDetector(                                  //Para poder generar un evento onTap en el icono
-        child: Icon(Icons.add, color: Colors.white),
-        onTap: (){                                                //Agregar al carrito
-          carritoProvider.agregarProducto(nombre, precio, 1);
-        },
+      trailing: Container(
+        width: 102,
+        child: Row(
+          children: [
+            GestureDetector(                                  //Para poder generar un evento onTap en el icono
+              child: Icon(Icons.remove, color: Colors.white),
+              onTap: (){                                                //Agregar al carrito
+                
+              },
+            ),
+            SizedBox(width: 5,),
+            Container(
+              width: 44,
+              child: Center(
+                child: Text('${carritoProvider.datosProducto[2]}',                                                   //Unidades del producto
+                  style: TextStyle(
+                    fontSize: 40,
+                    fontWeight: FontWeight.w200,
+                    color: Colors.white,
+                  ),
+                ),
+              ),
+            ),
+            SizedBox(width: 5,),
+            GestureDetector(                                  //Para poder generar un evento onTap en el icono
+              child: Icon(Icons.add, color: Colors.white),
+              onTap: (){                                                //Agregar al carrito
+                carritoProvider.crearProducto(nombre, precio, 1);   //Mandamos los datos a la clase Producto para que se prepare para construir
+                carritoProvider.agregarProducto(carritoProvider);   //Construimos el Producto y lo guardamos en la lista del Provider.
+              },
+            ),
+          ],
+        ),
       ),
     );
   } 
-
 }

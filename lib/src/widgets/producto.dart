@@ -1,20 +1,7 @@
 import 'package:flutter/material.dart';
 
-class Producto extends StatelessWidget {
-  //const Producto({Key? key}) : super(key: key);
-
-  String nombre = '';
-  int precio = 0;
-  int unidades = 1;
-
-  Producto(String nombre, int precio, int unidades){
-    this.nombre = nombre;
-    this.precio = precio;
-    this.unidades = unidades;
-  }
-
-  @override
-  Widget build(BuildContext context) {
+class Producto{
+  Widget productoTemporal(carritoProvider){
     return Container(
       margin: EdgeInsets.all(5.0),
       width: double.infinity,
@@ -29,14 +16,14 @@ class Producto extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Text('$nombre',
+                Text('${carritoProvider.datosProducto[0]}',
                   style: TextStyle(
                     fontSize: 18,
                     fontWeight: FontWeight.bold,
                     color: Colors.white,
                   ),
                 ),
-                Text('\$$precio',
+                Text('\$${carritoProvider.datosProducto[1]}',
                   style: TextStyle(
                     color: Colors.white,
                   ),
@@ -57,7 +44,7 @@ class Producto extends StatelessWidget {
                     ),
                     onTap: (){},                                              //Al presionar el ícono de menos...
                   ),
-                  Text('$unidades',                                                   //Unidades del producto
+                  Text('2',                                                   //Unidades del producto
                     style: TextStyle(
                       fontSize: 40,
                       fontWeight: FontWeight.w200,
