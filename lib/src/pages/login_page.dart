@@ -43,8 +43,8 @@ class LoginPage extends StatelessWidget {
                       ),
                     ),
                   ),
-                  Flexible(flex: 2,child: InputNombre()),                                            //Creación del Input de Nombre
-                  Flexible(flex: 2,child: InputDireccion()),                                         //Creación del Input de Dirección
+                  Flexible(flex: 3,child: InputNombre()),                                            //Creación del Input de Nombre
+                  Flexible(flex: 3,child: InputDireccion()),                                         //Creación del Input de Dirección
                   Container(
                     margin: EdgeInsets.symmetric(vertical: 10.0),           //Separar un poco el botón del Input de arriba
                     child: FloatingActionButton.extended(                   //Botón extendido de Entrar

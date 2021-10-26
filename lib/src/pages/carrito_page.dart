@@ -4,7 +4,7 @@ import 'package:flutter_eats/src/providers/inputs_login_provider.dart';
 import 'package:flutter_eats/src/widgets/main_drawer.dart';
 import 'package:provider/provider.dart';
 
-class CarritoPage extends StatelessWidget {
+class CarritoPage extends StatelessWidget{
   const CarritoPage({Key? key}) : super(key: key);
 
   @override
@@ -133,6 +133,7 @@ class CarritoPage extends StatelessWidget {
   _mostrarAlerta(BuildContext context, carritoProvider){                                                     //Alerta si algún campo está vacío
     showDialog(
       context: context,
+      barrierDismissible: false,
       builder: (context){
         return AlertDialog(
           shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20.0)),                         //Forma de la alerta

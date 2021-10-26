@@ -4,14 +4,14 @@ import 'package:flutter_eats/src/widgets/producto.dart';
 class CarritoProvider with ChangeNotifier {         //Provider del carrito
 
   List<Widget> _productos = [
+    /*Producto(),
     Producto(),
     Producto(),
     Producto(),
     Producto(),
     Producto(),
     Producto(),
-    Producto(),
-    Producto(),
+    Producto(),*/
   ];
 
   get productos{                   //Getter de productos
@@ -29,4 +29,11 @@ class CarritoProvider with ChangeNotifier {         //Provider del carrito
 
     notifyListeners();            //Notificar a los que requieren los cambios
   }
+
+  agregarProducto(nombre, precio, unidades){
+    this._productos.add(Producto(nombre, precio, unidades));
+
+    notifyListeners();
+  }
+
 }

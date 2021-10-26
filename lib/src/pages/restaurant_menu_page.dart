@@ -1,6 +1,8 @@
 
 import 'package:flutter/material.dart';
+import 'package:flutter_eats/src/providers/carrito_provider.dart';
 import 'package:flutter_eats/src/providers/restaurant_info_provider.dart';
+import 'package:flutter_eats/src/widgets/producto.dart';
 import 'package:provider/provider.dart';
 
 class RestaurantMenuPage extends StatelessWidget {
@@ -19,6 +21,7 @@ class _Body extends StatelessWidget {
 Widget build(BuildContext context) {
 
   final restaurantInfoProvider = Provider.of<RestaurantInfoProvider>(context);
+  final carritoProvider = Provider.of<CarritoProvider>(context);
 
     return SafeArea(
       child: Container(
@@ -40,7 +43,7 @@ Widget build(BuildContext context) {
                   ),
                   
                   Column(                                                                   //Espacio para los alimentos
-                    children: mostrarProductos(context,restaurantInfoProvider,'alimento'),
+                    children: mostrarProductos(context,restaurantInfoProvider,carritoProvider,'alimento'),
                   ),
                   
                   SizedBox(height: 20.0,),                                                  //Espacio extra
@@ -56,7 +59,7 @@ Widget build(BuildContext context) {
                   ),
 
                   Column(                                                                   //Espacio para las bebidas
-                    children: mostrarProductos(context,restaurantInfoProvider,'bebida'),
+                    children: mostrarProductos(context,restaurantInfoProvider,carritoProvider,'bebida'),
                   ),
 
                   
@@ -70,18 +73,18 @@ Widget build(BuildContext context) {
     );
   }
 
-  List <Widget> mostrarProductos (context, provider, tipoProducto){         //Obtiene la lista de productos a desplegar
+  List <Widget> mostrarProductos (context, provider, carritoProvider, tipoProducto){         //Obtiene la lista de productos a desplegar
 
     List <Widget> lista = [];
     
     if (tipoProducto == 'alimento'){
       for (var i = 0; i < provider.alimentos.length; i++){
-        lista.add(crearProducto(tipoProducto, provider.alimentos[i], provider.precioAlimentos[i]));
+        lista.add(crearProducto(carritoProvider, tipoProducto, provider.alimentos[i], provider.precioAlimentos[i]));
       }
     }
     else{
       for (var i = 0; i < provider.bebidas.length; i++){
-        lista.add(crearProducto(tipoProducto, provider.bebidas[i], provider.precioBebidas[i]));
+        lista.add(crearProducto(carritoProvider, tipoProducto, provider.bebidas[i], provider.precioBebidas[i]));
       }
     }
     
@@ -89,7 +92,7 @@ Widget build(BuildContext context) {
   }
 
   
-  Widget crearProducto(tipoProducto,nombre,precio){                 //Crea un ListTile con la información de un producto
+  Widget crearProducto(carritoProvider, tipoProducto,nombre,precio){                 //Crea un ListTile con la información de un producto
     
     String icon = '';
 
@@ -122,8 +125,8 @@ Widget build(BuildContext context) {
       ),
       trailing: GestureDetector(                                  //Para poder generar un evento onTap en el icono
         child: Icon(Icons.add, color: Colors.white),
-        onTap: (){
-          print('hola');
+        onTap: (){                                                //Agregar al carrito
+          carritoProvider.agregarProducto(nombre, precio, 1);
         },
       ),
     );
