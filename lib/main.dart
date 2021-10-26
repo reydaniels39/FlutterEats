@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_eats/src/pages/login_page.dart';
+import 'package:flutter_eats/src/providers/carrito_provider.dart';
 import 'package:flutter_eats/src/providers/inputs_login_provider.dart';
 import 'package:flutter_eats/src/providers/pagina_provider.dart';
 import 'package:flutter_eats/src/providers/restaurant_info_provider.dart';
@@ -21,6 +22,9 @@ class FlutterEats extends StatelessWidget {
         ),
         ChangeNotifierProvider(                                //ChangeNotifierProvider Provider para toda la app
           create: (_) => PaginaProvider(),                            //Provider de la página de nuestro BottomNavigationBar
+        ),
+        ChangeNotifierProvider(
+          create: (_) => CarritoProvider(),
         ),
       ],
       child: MaterialApp(

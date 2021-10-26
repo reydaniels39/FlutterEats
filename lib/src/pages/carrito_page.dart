@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_eats/src/providers/carrito_provider.dart';
 import 'package:flutter_eats/src/providers/inputs_login_provider.dart';
 import 'package:flutter_eats/src/widgets/main_drawer.dart';
 import 'package:provider/provider.dart';
@@ -10,6 +11,7 @@ class CarritoPage extends StatelessWidget {
   Widget build(BuildContext context) {
     
     final inputsLoginProvider = Provider.of<InputsLoginProvider>(context);
+    final carritoProvider = Provider.of<CarritoProvider>(context);
 
     return Scaffold(
       appBar: AppBar(
@@ -19,14 +21,26 @@ class CarritoPage extends StatelessWidget {
             fontSize: 25,
           ),
         ),
+        actions: [
+          IconButton(
+            onPressed: () => _mostrarAlerta(context, carritoProvider),
+            icon: Icon(
+              Icons.delete_forever,
+              size: 33,
+            ),
+            padding: EdgeInsets.only(
+              right: 15
+            ),
+          ),
+        ],
       ),
       drawer: MainDrawer(),
-      body: _body(inputsLoginProvider),                                                       //Llamamos a traer al body
+      body: _body(inputsLoginProvider, carritoProvider),                                                       //Llamamos a traer al body
     );
   
   }
 
-  Widget _body(inputsLoginProvider){
+  Widget _body(inputsLoginProvider, carritoProvider){
     
     return Container(                                                      //Container para la decoración del Background
       decoration: BoxDecoration(
@@ -65,16 +79,7 @@ class CarritoPage extends StatelessWidget {
                   width: double.infinity,
                   height: double.infinity,
                   child: ListView(
-                    children: [
-                      mostrarProducto(),
-                      mostrarProducto(),
-                      mostrarProducto(),
-                      mostrarProducto(),
-                      mostrarProducto(),
-                      mostrarProducto(),
-                      mostrarProducto(),
-                      mostrarProducto(),
-                    ],
+                    children: carritoProvider.productos,
                   ),
                 ),
               ),
@@ -102,17 +107,15 @@ class CarritoPage extends StatelessWidget {
                           color: Colors.green[600],
                           borderRadius: BorderRadius.all(Radius.circular(30.0)),
                         ),
-                        child: Column(                                            //Para centrar el texto en el container
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Text('¡Pedir!',
-                              style: TextStyle(
-                                fontSize: 25,
-                                color: Colors.white,
-                                fontWeight: FontWeight.w300,
-                              ),
+                        child: Center(
+                          child: Text(
+                            '¡Pedir!',
+                            style: TextStyle(
+                              fontSize: 25,
+                              color: Colors.white,
+                              fontWeight: FontWeight.w300,
                             ),
-                          ],
+                          ),
                         ),
                       ),
                       onPressed: (){},                                            //Al presionar el botón de pedir...
@@ -127,68 +130,33 @@ class CarritoPage extends StatelessWidget {
     );
   }
 
-  Widget mostrarProducto (){
-    return Container(
-      margin: EdgeInsets.all(5.0),
-      width: double.infinity,
-      height: 60,
-      decoration: BoxDecoration(
-      ),
-      child: Row(
-        children: [
-          Container(                                                      //Muestra nombre y precio del producto
-            width: 200,
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Text('Pizza Peperonni',
-                  style: TextStyle(
-                    fontSize: 18,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.white,
-                  ),
-                ),
-                Text('\$130',
-                  style: TextStyle(
-                    color: Colors.white,
-                  ),
-                ),
-              ],
+  _mostrarAlerta(BuildContext context, carritoProvider){                                                     //Alerta si algún campo está vacío
+    showDialog(
+      context: context,
+      builder: (context){
+        return AlertDialog(
+          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20.0)),                         //Forma de la alerta
+          title: Text('Vaciar Carrito'),                                                                    //Título de la alerta
+          content: Text('Esto eliminará todos los artículos del carrito. ¿Continuar?'),     //Mensaje de la alerta
+          actions: <Widget>[                                                                                //Botón de la alerta
+            TextButton(
+              onPressed: () => Navigator.of(context).pop(),                                 //Cerrar alerta
+              child: Text('Cancelar',
+                style: TextStyle(color: Colors.black),
+              ),                                                            //Texto del botón de la alerta
             ),
-          ),
-          Expanded(
-            child: Container(                                                //Muestra la cantidad de unidades y los iconos de + y -
-              width: 20,
-              height: 70,
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: [
-                  GestureDetector(
-                    child: Icon( Icons.remove, 
-                      color: Colors.white,
-                    ),
-                    onTap: (){},                                              //Al presionar el ícono de menos...
-                  ),
-                  Text('2',                                                   //Unidades del producto
-                    style: TextStyle(
-                      fontSize: 40,
-                      fontWeight: FontWeight.w200,
-                      color: Colors.white,
-                    ),
-                  ),
-                  GestureDetector(
-                    child: Icon( Icons.add, 
-                      color: Colors.white,
-                    ),
-                    onTap: (){},                                             //Al presionar el ícono de más...
-                  ),
-                ],
-              ),
+            TextButton(
+              onPressed: () {
+                carritoProvider.borrarProductos();
+                Navigator.of(context).pop();
+              },                                 //Cerrar alerta
+              child: Text('Vaciar Carrito',
+                style: TextStyle(color: Colors.red),
+              ),                                                            //Texto del botón de la alerta
             ),
-          ),
-        ],
-      ),
+          ],
+        );
+      },
     );
   }
 }

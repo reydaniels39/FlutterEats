@@ -32,7 +32,7 @@ class LoginPage extends StatelessWidget {
               child: Column(                                                //Organizado por Columnas
                 mainAxisAlignment: MainAxisAlignment.spaceAround,           //Espacio entre widgets
                 children: [
-                  Flexible(
+                  Flexible(                                                       //Flexible para que se acomode la login page al abrir el teclado
                     flex: 3,
                     child: Container(                                                //Contenedor que tiene la imagen para darle formato
                       width: double.infinity,                                             //Medidas de la imagen
