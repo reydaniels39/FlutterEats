@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 
 class Producto{
   Widget productoTemporal(carritoProvider){
+    carritoProvider.agregarPrecio(int.parse(carritoProvider.datosProducto[1]));
+
     return Container(
       margin: EdgeInsets.all(5.0),
       width: double.infinity,
@@ -44,7 +46,7 @@ class Producto{
                     ),
                     onTap: (){},                                              //Al presionar el ícono de menos...
                   ),
-                  Text('2',                                                   //Unidades del producto
+                  Text('1',                                                   //Unidades del producto
                     style: TextStyle(
                       fontSize: 40,
                       fontWeight: FontWeight.w200,

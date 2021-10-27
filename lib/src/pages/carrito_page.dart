@@ -87,7 +87,7 @@ class CarritoPage extends StatelessWidget{
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
-                    Text('Total: \$370.0',                                        //Monto total
+                    Text('Total: \$${carritoProvider.precioTotal}',                                        //Monto total
                       style: TextStyle(
                         color: Colors.black,
                         fontSize: 30,
@@ -143,6 +143,7 @@ class CarritoPage extends StatelessWidget{
             TextButton(
               onPressed: () {
                 carritoProvider.borrarProductos();
+                carritoProvider.borrarPrecios();
                 Navigator.of(context).pop();
               },                                 //Cerrar alerta
               child: Text('Vaciar Carrito',

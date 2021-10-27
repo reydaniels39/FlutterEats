@@ -131,7 +131,7 @@ Widget build(BuildContext context) {
         child: GestureDetector(                                  //Para poder generar un evento onTap en el icono
           child: Icon(Icons.add, color: Colors.white),
           onTap: (){                                                //Agregar al carrito
-            carritoProvider.crearProducto(nombre, precio, 1);   //Mandamos los datos a la clase Producto para que se prepare para construir
+            carritoProvider.crearProducto(nombre, precio);   //Mandamos los datos a la clase Producto para que se prepare para construir
             carritoProvider.agregarProducto(carritoProvider);   //Construimos el Producto y lo guardamos en la lista del Provider.
             
             ScaffoldMessenger.of(context).showSnackBar(SnackBar(

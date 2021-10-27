@@ -23,11 +23,11 @@ class _Body extends StatelessWidget {
 
     return SafeArea(
       child: Container(                                             //Contenedor para agrupar todos los elementos 
-        padding: EdgeInsets.only(
+        padding: EdgeInsets.only(             //El contenedor tendrá un padding horizontal y superior
           top: 20,
           left: 40,
           right: 40,
-        ),             //El contenedor tendrá un padding horizontal
+        ),
         child: Column(                                              //Columna para alinear nuestros elementos verticalmente
           children: [
             CardSwiper(),
