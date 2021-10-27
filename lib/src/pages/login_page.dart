@@ -15,16 +15,7 @@ class LoginPage extends StatelessWidget {
     return Scaffold(                                                        //Retornar un Scaffold
       resizeToAvoidBottomInset: true,                                      //Para que el teclado no mueva los elementos del body
       body: Container(                                                      //Container para la decoración del Background
-        decoration: BoxDecoration(
-          gradient: LinearGradient(
-            begin: Alignment.topCenter,
-            end: Alignment.bottomCenter,
-            colors: [
-              Color.fromRGBO(0, 14, 57, 1),
-              Color.fromRGBO(21, 19, 20, 1),
-            ],
-          ),
-        ),
+        color: Color.fromRGBO(19, 19, 19, 1),
         child: SafeArea(                                                    //SafeArea para evitar que la app abarque también la zona del appbar o los botones
           child: Container(                                                 //Contenedor para margenes de la pagina completa
             margin: EdgeInsets.symmetric(horizontal: 80, vertical: 60),     //Margenes para la página completa de inicio de sesión
@@ -48,10 +39,11 @@ class LoginPage extends StatelessWidget {
                   Container(
                     margin: EdgeInsets.symmetric(vertical: 10.0),           //Separar un poco el botón del Input de arriba
                     child: FloatingActionButton.extended(                   //Botón extendido de Entrar
+                      elevation: 0,
                       label: Text(
                         'Entrar',
                         style: TextStyle(
-                          color: Colors.white,
+                          color: Colors.black,
                           fontSize: 20,
                         ),
                       ),

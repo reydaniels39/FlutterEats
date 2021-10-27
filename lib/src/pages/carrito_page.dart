@@ -19,6 +19,7 @@ class CarritoPage extends StatelessWidget{
           'Carrito',
           style: TextStyle(
             fontSize: 25,
+            fontWeight: FontWeight.w400,
           ),
         ),
         actions: [
@@ -44,14 +45,7 @@ class CarritoPage extends StatelessWidget{
     
     return Container(                                                      //Container para la decoración del Background
       decoration: BoxDecoration(
-        gradient: LinearGradient(
-          begin: Alignment.topCenter,
-          end: Alignment.bottomCenter,
-          colors: [
-            Color.fromRGBO(0, 14, 57, 1),
-            Color.fromRGBO(21, 19, 20, 1),
-          ],
-        ),
+        color: Color.fromRGBO(19, 19, 19, 1),
       ),
       
       child: Padding(
@@ -93,7 +87,7 @@ class CarritoPage extends StatelessWidget{
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
-                    Text('Total: \$370.0',                                        //Monto total
+                    Text('Total: \$${carritoProvider.precioTotal}',                                        //Monto total
                       style: TextStyle(
                         color: Colors.black,
                         fontSize: 30,
@@ -104,7 +98,7 @@ class CarritoPage extends StatelessWidget{
                         width: 140,
                         height: 50,
                         decoration: BoxDecoration(
-                          color: Colors.green[600],
+                          color: Color.fromRGBO(255, 209, 0, 1),
                           borderRadius: BorderRadius.all(Radius.circular(30.0)),
                         ),
                         child: Center(
@@ -112,8 +106,8 @@ class CarritoPage extends StatelessWidget{
                             '¡Pedir!',
                             style: TextStyle(
                               fontSize: 25,
-                              color: Colors.white,
-                              fontWeight: FontWeight.w300,
+                              color: Colors.black,
+                              fontWeight: FontWeight.w600,
                             ),
                           ),
                         ),
@@ -149,6 +143,7 @@ class CarritoPage extends StatelessWidget{
             TextButton(
               onPressed: () {
                 carritoProvider.borrarProductos();
+                carritoProvider.borrarPrecios();
                 Navigator.of(context).pop();
               },                                 //Cerrar alerta
               child: Text('Vaciar Carrito',

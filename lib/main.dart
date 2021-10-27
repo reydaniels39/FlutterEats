@@ -31,12 +31,12 @@ class FlutterEats extends StatelessWidget {
         debugShowCheckedModeBanner: false,                          //DebugBanner
         title: 'Flutter Eats',                                      //Título de la app
         theme: ThemeData(                                           //Temas para la app
-          primaryColor: Color.fromRGBO(0, 255, 255, 1),             //Color Primario para el Tema    
+          primaryColor: Color.fromRGBO(255, 209, 0, 1),             //Color Primario para el Tema    
           colorScheme: ThemeData().colorScheme.copyWith(
-            primary: Color.fromRGBO(0, 255, 255, 1),                //Color Primario para los elementos seleccionados
+            primary: Color.fromRGBO(255, 209, 0, 1),                //Color Primario para los elementos seleccionados
           ),
           floatingActionButtonTheme: FloatingActionButtonThemeData(   //Temas para los Floating Action Buttons
-            backgroundColor: Colors.purpleAccent,
+            backgroundColor: Color.fromRGBO(255, 209, 0, 1),
           ),
         ),
         initialRoute: '/',                                       //Ruta Inicial

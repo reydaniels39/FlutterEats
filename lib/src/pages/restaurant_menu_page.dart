@@ -34,6 +34,7 @@ Widget build(BuildContext context) {
                     style: TextStyle(
                       color: Colors.white,
                       fontSize: 25,
+                      fontWeight: FontWeight.w300,
                     ),
                   ),
                   Divider(                                                                  //Linea divisora
@@ -50,6 +51,7 @@ Widget build(BuildContext context) {
                     style: TextStyle(
                       color: Colors.white,
                       fontSize: 25,
+                      fontWeight: FontWeight.w300,
                     ),
                   ),
                   Divider(                                                                  //Linea divisora
@@ -78,12 +80,12 @@ Widget build(BuildContext context) {
     
     if (tipoProducto == 'alimento'){
       for (var i = 0; i < provider.alimentos.length; i++){
-        lista.add(crearProducto(carritoProvider, tipoProducto, provider.alimentos[i], provider.precioAlimentos[i]));
+        lista.add(crearProducto(context, carritoProvider, tipoProducto, provider.alimentos[i], provider.precioAlimentos[i]));
       }
     }
     else{
       for (var i = 0; i < provider.bebidas.length; i++){
-        lista.add(crearProducto(carritoProvider, tipoProducto, provider.bebidas[i], provider.precioBebidas[i]));
+        lista.add(crearProducto(context, carritoProvider, tipoProducto, provider.bebidas[i], provider.precioBebidas[i]));
       }
     }
     
@@ -91,7 +93,7 @@ Widget build(BuildContext context) {
   }
 
   
-  Widget crearProducto(carritoProvider, tipoProducto, nombre, precio){                 //Crea un ListTile con la información de un producto
+  Widget crearProducto(context, carritoProvider, tipoProducto, nombre, precio){                 //Crea un ListTile con la información de un producto
     
     String icon = '';
 
@@ -99,6 +101,8 @@ Widget build(BuildContext context) {
     else icon = 'assets/bebida.png';
     
     return ListTile(
+      tileColor: Colors.red,
+      selected: false,
       title: Text(nombre,
         style: TextStyle(
           color: Colors.white,
@@ -123,37 +127,27 @@ Widget build(BuildContext context) {
         ),
       ),
       trailing: Container(
-        width: 102,
-        child: Row(
-          children: [
-            GestureDetector(                                  //Para poder generar un evento onTap en el icono
-              child: Icon(Icons.remove, color: Colors.white),
-              onTap: (){                                                //Agregar al carrito
-                
-              },
-            ),
-            SizedBox(width: 5,),
-            Container(
-              width: 44,
-              child: Center(
-                child: Text('${carritoProvider.datosProducto[2]}',                                                   //Unidades del producto
-                  style: TextStyle(
-                    fontSize: 40,
-                    fontWeight: FontWeight.w200,
-                    color: Colors.white,
-                  ),
+        width: 50,
+        child: GestureDetector(                                  //Para poder generar un evento onTap en el icono
+          child: Icon(Icons.add, color: Colors.white),
+          onTap: (){                                                //Agregar al carrito
+            carritoProvider.crearProducto(nombre, precio);   //Mandamos los datos a la clase Producto para que se prepare para construir
+            carritoProvider.agregarProducto(carritoProvider);   //Construimos el Producto y lo guardamos en la lista del Provider.
+            
+            ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+              content: Text("Producto Agregado al carrito",
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  color: Colors.black,
                 ),
               ),
-            ),
-            SizedBox(width: 5,),
-            GestureDetector(                                  //Para poder generar un evento onTap en el icono
-              child: Icon(Icons.add, color: Colors.white),
-              onTap: (){                                                //Agregar al carrito
-                carritoProvider.crearProducto(nombre, precio, 1);   //Mandamos los datos a la clase Producto para que se prepare para construir
-                carritoProvider.agregarProducto(carritoProvider);   //Construimos el Producto y lo guardamos en la lista del Provider.
-              },
-            ),
-          ],
+              duration: Duration(seconds:1),
+              backgroundColor: Colors.white,
+              behavior: SnackBarBehavior.floating,
+              width: 250,
+            ));
+
+          },
         ),
       ),
     );

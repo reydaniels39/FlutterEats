@@ -18,27 +18,22 @@ class RestaurantMainPage extends StatelessWidget {
     final restaurantInfoProvider = Provider.of<RestaurantInfoProvider>(context);        //Instancia del provider de Restaurant Info
 
     return Scaffold(
+      extendBody: true,                                               //Para que el BottomNavigationBar pueda tener bordes redondeados
       appBar: AppBar(                                                 //AppBar que muestra una Bienvenida
+        backgroundColor: Color.fromRGBO(255, 209, 0, 1),
         title: Text(
           '${restaurantInfoProvider.titulo}',
           style: TextStyle(
             fontSize: 25,
-            color: Colors.orange[500],
+            color: Colors.black,
           ),
         ),
         centerTitle: true,
       ),
       body: Container(
         decoration: BoxDecoration(                                    //Decoracion del background del body
-          gradient: LinearGradient(
-            begin: Alignment.topLeft,
-            end: Alignment.bottomRight,
-            colors: [
-              Color.fromRGBO(0, 14, 57, 1),
-              Color.fromRGBO(21, 19, 20, 1),
-            ],
+          color: Color.fromRGBO(19, 19, 19, 1),
           ),
-        ),
         child: ChooseBody(),                               //Instanciamos la clase que buscará el body
       ),
       bottomNavigationBar: CustomNavigationBar(),       //Instanciamos la clase que nos proporcionará el BottomNavigationBar
